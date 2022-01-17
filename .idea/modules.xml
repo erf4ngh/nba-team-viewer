@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nba-team-viewer.iml" filepath="$PROJECT_DIR$/.idea/modules/nba-team-viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NBAtv.iml" filepath="$PROJECT_DIR$/.idea/modules/NBAtv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NBAtv.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NBAtv.app.iml" />
     </modules>
   </component>
 </project>

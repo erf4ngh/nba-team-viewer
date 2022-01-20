@@ -54,16 +54,16 @@ class TeamsFragment : Fragment() {
             }
 
             override fun onResponse(call: Call<List<Team>>, response: Response<List<Team>>) {
-                val teams = response.body()
-                teams?.let{
+                val team = response.body()
+                team?.let{
                     showTeams(it)
                 }
             }
         })
     }
 
-    private fun showTeams(teams: List<Team>){
+    private fun showTeams(team: List<Team>){
         recyclerViewTeams.layoutManager = LinearLayoutManager(activity)
-        recyclerViewTeams.adapter = TeamsAdapter(teams)
+        recyclerViewTeams.adapter = TeamsAdapter(team)
     }
 }

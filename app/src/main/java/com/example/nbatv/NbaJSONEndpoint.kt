@@ -1,5 +1,6 @@
 package com.example.nbatv
 
+import com.example.nbatv.models.Team
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.http.GET

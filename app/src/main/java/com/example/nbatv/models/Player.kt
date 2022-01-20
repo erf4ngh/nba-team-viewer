@@ -1,4 +1,4 @@
-package com.example.nbatv
+package com.example.nbatv.models
 
 data class Player {
     val id: Int,

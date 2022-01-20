@@ -1,6 +1,6 @@
 package com.example.nbatv.repo
 
-interface NbaDAO {
+interface NbaDAO {/*
     suspend fun getPlayer() : Player
-    suspend fun getTeam() : Team
+    suspend fun getTeam() : Team*/
 }

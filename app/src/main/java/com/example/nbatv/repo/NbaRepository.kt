@@ -2,7 +2,7 @@ package com.example.nbatv
 
 import com.example.nbatv.repo.NbaDAO
 
-class NbaRepository {
+class NbaRepository {/*
     suspend fun getPlayer() = NbaDAO.getPlayer()
-    suspend fun getTeam() = NbaDAO.getTeam()
+    suspend fun getTeam() = NbaDAO.getTeam()*/
 }

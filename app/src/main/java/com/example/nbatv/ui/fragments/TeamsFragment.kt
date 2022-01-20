@@ -8,7 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
-import com.example.nbatv.NbaJSONEndpoint
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.nbatv.network.NbaJSONEndpoint
 import com.example.nbatv.R
 import com.example.nbatv.TeamsAdapter
 import com.example.nbatv.models.Team
@@ -62,7 +63,7 @@ class TeamsFragment : Fragment() {
     }
 
     private fun showTeams(teams: List<Team>){
-        reyclerViewTeams.layoutManager = LinearLayout(activity)
-        recyclerViewTeams.adapter = TeamsAdapter(team)
+        recyclerViewTeams.layoutManager = LinearLayoutManager(activity)
+        recyclerViewTeams.adapter = TeamsAdapter(teams)
     }
 }

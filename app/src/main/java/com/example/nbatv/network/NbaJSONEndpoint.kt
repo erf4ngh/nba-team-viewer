@@ -1,4 +1,4 @@
-package com.example.nbatv
+package com.example.nbatv.network
 
 import com.example.nbatv.models.Team
 import retrofit2.Call

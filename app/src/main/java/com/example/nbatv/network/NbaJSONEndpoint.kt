@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 const val url = "https://raw.githubusercontent.com/scoremedia/nba-team-viewer/master"
 
 interface NbaJSONEndpoint {
-
+/*
     @GET("input.json")
     // check this
     fun getTeam() : Call<List<Team>>
@@ -22,7 +22,10 @@ interface NbaJSONEndpoint {
                 .build()
                 .create(NbaJSONEndpoint::class.java)
         }
-    }
+    }*/
+    @GET("scoremedia/nba-team-viewer/master/input.json")
+    fun getTeams() : Call<List<Team>>
+    fun getJSONString() : Call<String>
 }
 
 /*

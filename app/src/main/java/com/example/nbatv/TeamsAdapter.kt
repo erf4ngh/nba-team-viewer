@@ -25,7 +25,6 @@ class TeamsAdapter(val team: List<Team>) : RecyclerView.Adapter<TeamsAdapter.Tea
         holder.view.textViewName.text = team.teamName
         holder.view.textViewWins.text = team.wins
         holder.view.textViewLosses.text = team.losses
-        holder.view.textViewIsNew.visibility = if(team.isNew) View.VISIBLE else View.INVISIBLE
     }
 
     class TeamViewHolder(val view: View) : RecyclerView.ViewHolder(view)

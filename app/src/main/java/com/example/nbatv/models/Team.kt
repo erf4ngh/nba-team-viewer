@@ -9,5 +9,5 @@ data class Team (
         @field:Json(name = "full_name") val teamName: String?,
         @field:Json(name = "wins") val wins: String?,
         @field:Json(name = "losses") val losses: String?,
-        val isNew: Boolean
+        val players: List<Player>
 )

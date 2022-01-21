@@ -1,7 +1,7 @@
 package com.example.nbatv
 
-import com.example.nbatv.internal.TeamEntity
+import com.example.nbatv.internal.MoshiTeamEntity
 
 interface TeamRepository {
-    fun getAllTeams(): MutableList<TeamEntity>?
+    fun getAllTeams(): List<Team>?
 }

@@ -10,7 +10,7 @@ class TeamsViewModel : ViewModel() {
     fun getAllTeams() : String?{
         var teams : String? = null
         thread(start = true){
-            teams = teamRepository.getAllTeams()
+            teams = teamRepository.getAllTeams()?.joinToString()
         }.join()
         return teams
     }

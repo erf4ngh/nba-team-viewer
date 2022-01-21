@@ -1,5 +1,7 @@
 package com.example.nbatv
 
+import com.example.nbatv.internal.TeamEntity
+
 interface TeamRepository {
-    fun getAllTeams(): String?
+    fun getAllTeams(): MutableList<TeamEntity>?
 }

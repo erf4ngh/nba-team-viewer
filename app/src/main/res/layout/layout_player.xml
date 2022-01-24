@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="3dp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:padding="10dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewFirstName"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="Cole"
+                android:fontFamily="@font/open_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewLastName"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="Anthony"
+                app:layout_constraintStart_toEndOf="@id/textViewFirstName"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/open_sans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewPosition"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="G"
+                app:layout_constraintEnd_toEndOf="@id/textViewNumber"
+                android:layout_marginEnd="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textViewNumber"
+                android:textSize="18sp"
+                android:fontFamily="@font/open_sans_bold"
+                android:textColor="@color/white"
+                android:text="50"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

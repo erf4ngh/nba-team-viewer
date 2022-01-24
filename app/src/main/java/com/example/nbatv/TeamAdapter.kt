@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nbatv.ui.teams.TeamViewModel
 import kotlinx.android.synthetic.main.layout_team.view.*
 
 class TeamAdapter(val team: List<Team>?) : RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {

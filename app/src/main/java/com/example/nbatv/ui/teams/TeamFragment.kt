@@ -33,12 +33,13 @@ class TeamFragment : Fragment() {
         refreshLayout.setOnRefreshListener {
             viewModel.getAllTeams()
         }
-        viewModel.getAllTeams()
+        val teamsList : List<Team>? = viewModel.getAllTeams()
+        teamsList.let { showTeams(it) }
         //val textview = view.findViewById<TextView>(R.id.text)
         //textview.text = viewModel.getAllTeams()
     }
 
-    private fun showTeams(team : List<Team>){
+    private fun showTeams(team : List<Team>?){
         recyclerViewTeams.layoutManager = LinearLayoutManager(activity)
         recyclerViewTeams.adapter = TeamAdapter(team)
     }

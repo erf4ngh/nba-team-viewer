@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nbatv.ui.teams.TeamViewModel
 import kotlinx.android.synthetic.main.layout_team.view.*
 
-class TeamAdapter(val team: List<Team>) : RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
+class TeamAdapter(val team: List<Team>?) : RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
         return TeamViewHolder(
@@ -16,13 +16,13 @@ class TeamAdapter(val team: List<Team>) : RecyclerView.Adapter<TeamAdapter.TeamV
     }
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
-        val curTeam = team[position]
-        holder.view.textViewName.text = curTeam.teamName
+        val curTeam = team?.get(position)
+        holder.view.textViewName.text = curTeam!!.teamName
         holder.view.textViewLosses.text = curTeam.losses.toString()
         holder.view.textViewWins.text = curTeam.wins.toString()
     }
 
-    override fun getItemCount() = team.size
+    override fun getItemCount(): Int = team!!.size
 
     class TeamViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 }

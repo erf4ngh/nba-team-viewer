@@ -3,18 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.teams.TeamFragment">
+    tools:context=".ui.teams.TeamListFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewTeams"
-            tools:listitem="@layout/layout_team"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTeams"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/text"
-        />
+        tools:listitem="@layout/layout_team" />
 </FrameLayout>

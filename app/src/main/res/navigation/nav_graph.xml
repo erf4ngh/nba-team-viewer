@@ -7,7 +7,23 @@
 
     <fragment
         android:id="@+id/teamsFragment"
-        android:name="com.example.nbatv.ui.teams.TeamFragment"
+        android:name="com.example.nbatv.ui.teams.TeamListFragment"
         android:label="teams_fragment"
-        tools:layout="@layout/teams_fragment" />
-</navigation>
+        tools:layout="@layout/teams_fragment">
+        <action
+            android:id="@+id/action_teamsFragment_to_teamDetailFragment"
+            app:destination="@id/teamDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamDetailFragment"
+        android:name="com.example.nbatv.ui.teamdetail.TeamDetailFragment"
+        android:label="players_fragment"
+        tools:layout="@layout/team_detail_fragment"
+        >
+        <argument
+            android:name="myArg"
+            app:argType="com.example.nbatv.Team"
+             />
+</fragment>
+
+    </navigation>

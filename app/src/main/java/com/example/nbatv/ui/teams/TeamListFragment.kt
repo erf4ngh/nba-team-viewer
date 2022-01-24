@@ -1,25 +1,24 @@
 package com.example.nbatv.ui.teams
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nbatv.R
 import com.example.nbatv.Team
-import com.example.nbatv.TeamAdapter
-//import com.example.nbatv.TeamAdapter
 import kotlinx.android.synthetic.main.teams_fragment.*
 
-class TeamFragment : Fragment() {
+class TeamListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = TeamFragment()
+        fun newInstance() = TeamListFragment()
     }
 
-    private var viewModel: TeamViewModel = TeamViewModel()
+    private var viewModel: TeamListViewModel = TeamListViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,17 +29,17 @@ class TeamFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //refreshLayout.setOnRefreshListener {
-        //    viewModel.getAllTeams()
-        //}
         val teamsList : List<Team>? = viewModel.getAllTeams()
         teamsList.let { showTeams(it) }
-        //val textview = view.findViewById<TextView>(R.id.text)
-        //textview.text = viewModel.getAllTeams()
     }
 
     private fun showTeams(team : List<Team>?){
         recyclerViewTeams.layoutManager = LinearLayoutManager(activity)
-        recyclerViewTeams.adapter = TeamAdapter(team)
+        recyclerViewTeams.adapter = TeamListAdapter(team, ::navigateToTeamDetail)
+    }
+    private fun navigateToTeamDetail(team : Team){
+        val action = TeamListFragmentDirections.actionTeamsFragmentToTeamDetailFragment(team)
+        findNavController().navigate(action)
+        Log.v("test", team.toString())
     }
 }

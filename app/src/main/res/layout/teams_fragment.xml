@@ -5,18 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.teams.TeamsFragment">
 
-<!--    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
-<!--        android:id="@+id/refreshLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/recyclerViewTeams"-->
-<!--            tools:listitem="@layout/layout_team"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"/>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTeams"
+            tools:listitem="@layout/layout_team"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-<!--    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <TextView
         android:layout_width="match_parent"

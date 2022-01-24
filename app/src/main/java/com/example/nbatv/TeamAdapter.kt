@@ -17,7 +17,7 @@ class TeamAdapter(val team: List<Team>?) : RecyclerView.Adapter<TeamAdapter.Team
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
         val curTeam = team?.get(position)
-        holder.view.textViewName.text = curTeam!!.teamName
+        holder.view.textViewName.text = curTeam!!.teamName.toString()
         holder.view.textViewLosses.text = curTeam.losses.toString()
         holder.view.textViewWins.text = curTeam.wins.toString()
     }

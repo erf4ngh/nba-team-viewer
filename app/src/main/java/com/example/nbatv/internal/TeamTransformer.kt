@@ -9,5 +9,6 @@ fun MoshiTeamEntity.toTeam() : Team {
         teamName = this.full_name,
         wins = this.wins,
         losses = this.losses,
+        players = this.players,
     )
 }

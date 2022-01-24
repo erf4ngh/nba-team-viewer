@@ -19,6 +19,7 @@ class TeamAdapter(val team: List<Team>?) : RecyclerView.Adapter<TeamAdapter.Team
         holder.view.textViewName.text = curTeam!!.teamName.toString()
         holder.view.textViewLosses.text = curTeam.losses.toString()
         holder.view.textViewWins.text = curTeam.wins.toString()
+        //players
     }
 
     override fun getItemCount(): Int = team!!.size

@@ -5,4 +5,5 @@ data class Team (
         val teamName: String?,
         val wins: Int?,
         val losses: Int?,
+        val players: List<Player>?,
 )

@@ -30,9 +30,9 @@ class TeamFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        refreshLayout.setOnRefreshListener {
-            viewModel.getAllTeams()
-        }
+        //refreshLayout.setOnRefreshListener {
+        //    viewModel.getAllTeams()
+        //}
         val teamsList : List<Team>? = viewModel.getAllTeams()
         teamsList.let { showTeams(it) }
         //val textview = view.findViewById<TextView>(R.id.text)

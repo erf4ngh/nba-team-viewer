@@ -19,7 +19,6 @@ class TeamListAdapter(val teams: List<Team>?, val onTeamClicked: (Team) -> Unit)
     }
 
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
-        //players
         holder.bind(teams!!.get(position))
     }
 
@@ -32,7 +31,6 @@ class TeamListAdapter(val teams: List<Team>?, val onTeamClicked: (Team) -> Unit)
             containerView.textViewWins.text = team.wins.toString()
             containerView.setOnClickListener{
                 onTeamClicked(team)
-
             }
         }
     }

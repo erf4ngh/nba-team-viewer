@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nbatv.*
+import kotlinx.android.synthetic.main.team_detail_fragment.*
+
 //import com.example.nbatv.ui.teams.TeamAdapter
 
 class TeamDetailFragment : Fragment() {
@@ -16,6 +19,7 @@ class TeamDetailFragment : Fragment() {
     }
 
     private var viewModel: TeamDetailViewModel = TeamDetailViewModel()
+    val args: TeamDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,12 +30,12 @@ class TeamDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //val playersList : List<Player>? = viewModel.getAllPlayers() // getAllPlayers can be just a function inside getAllTeams which just returns the list of players for that team
-        //playersList.let { showPlayers(it) }
+        val playersList : List<Player>? = viewModel.getAllPlayers(args.myArg) // getAllPlayers can be just a function inside getAllTeams which just returns the list of players for that team
+        playersList.let { showPlayers(it) }
     }
 
     private fun showPlayers(player : List<Player>?){
-//        recyclerViewPlayers.layoutManager = LinearLayoutManager(activity)
-//        recyclerViewPlayers.adapter = PlayerAdapter(player)
+        recyclerViewPlayers.layoutManager = LinearLayoutManager(activity)
+        recyclerViewPlayers.adapter = PlayerAdapter(player)
     }
 }

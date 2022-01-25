@@ -40,6 +40,5 @@ class TeamListFragment : Fragment() {
     private fun navigateToTeamDetail(team : Team){
         val action = TeamListFragmentDirections.actionTeamsFragmentToTeamDetailFragment(team)
         findNavController().navigate(action)
-        Log.v("test", team.toString())
     }
 }

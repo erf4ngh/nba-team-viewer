@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbatv.Player
 import com.example.nbatv.R
+import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.layout_player.view.*
 
-class PlayerAdapter(val player: List<Player>?) : RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
+class PlayerAdapter(val players: List<Player>?) : RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerViewHolder {
         return PlayerViewHolder(
@@ -17,14 +18,17 @@ class PlayerAdapter(val player: List<Player>?) : RecyclerView.Adapter<PlayerAdap
     }
 
     override fun onBindViewHolder(holder: PlayerViewHolder, pos: Int) {
-        val curPlayer = player?.get(pos)
-        holder.view.textViewFirstName.text = curPlayer!!.firstName.toString()
-        holder.view.textViewLastName.text = curPlayer.lastName.toString()
-        holder.view.textViewPosition.text = curPlayer.position.toString()
-        holder.view.textViewNumber.text = curPlayer.number.toString()
+        holder.bind(players!!.get(pos))
     }
 
-    override fun getItemCount(): Int = player!!.size
+    override fun getItemCount(): Int = players!!.size
 
-    class PlayerViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+    class PlayerViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer{
+        fun bind(player: Player){
+            containerView.textViewFirstName.text = player!!.firstName.toString()
+            containerView.textViewLastName.text = player.lastName.toString()
+            containerView.textViewPosition.text = player.position.toString()
+            containerView.textViewNumber.text = player.number.toString()
+        }
+    }
 }

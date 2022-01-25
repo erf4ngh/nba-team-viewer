@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">NBAtv</string>
-
+    <string name="sortByName">Name</string>
+    <string name="sortByWins">Wins</string>
+    <string name="sortByLosses">Losses</string>
     <string-array name="team_list">
         <item>Atlanta Hawks</item>
         <item>Boston Celtics</item>

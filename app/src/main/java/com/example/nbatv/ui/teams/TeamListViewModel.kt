@@ -7,13 +7,27 @@ import com.example.nbatv.internal.HttpUrlConnectionTeamRepository
 import kotlin.concurrent.thread
 
 class TeamListViewModel : ViewModel() {
-    private val teamRepository : TeamRepository = HttpUrlConnectionTeamRepository()
-    fun getAllTeams() : List<Team>?{
-        var teams : List<Team>? = null
-        thread(start = true){
+    private val teamRepository: TeamRepository = HttpUrlConnectionTeamRepository()
+    var teams: List<Team>? = null
+    fun getAllTeams(): List<Team>? {
+        if(teams != null){
+            return teams
+        }
+        thread {
             teams = teamRepository.getAllTeams()
         }.join()
-        teams = teams?.sortedBy { it.teamName } //sorts by alphabetical order, need to allow user to do this not by default
         return teams
+    }
+
+    fun getTeamsSortedByName(): List<Team> {
+        return getAllTeams()!!.sortedBy { it.teamName }
+    }
+
+    fun getTeamsSortedByWins() : List<Team> {
+        return getAllTeams()!!.sortedByDescending { it.wins }
+    }
+
+    fun getTeamsSortedByLosses() : List<Team> {
+        return getAllTeams()!!.sortedByDescending { it.losses }
     }
 }

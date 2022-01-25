@@ -1,11 +1,8 @@
 package com.example.nbatv.ui.teams
 
 import android.os.Bundle
-import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nbatv.R
@@ -19,6 +16,12 @@ class TeamListFragment : Fragment() {
     }
 
     private var viewModel: TeamListViewModel = TeamListViewModel()
+    var sortId : Int = 1
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +34,30 @@ class TeamListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val teamsList : List<Team>? = viewModel.getAllTeams()
         teamsList.let { showTeams(it) }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        return when(id) {
+            R.id.sortByName -> {
+                showTeams(viewModel.getTeamsSortedByName())
+                true
+            }
+            R.id.sortByWins -> {
+                showTeams(viewModel.getTeamsSortedByWins())
+                true
+            }
+            R.id.sortByLosses -> {
+                showTeams(viewModel.getTeamsSortedByLosses())
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun showTeams(team : List<Team>?){

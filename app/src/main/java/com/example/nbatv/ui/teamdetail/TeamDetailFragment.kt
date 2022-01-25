@@ -30,7 +30,7 @@ class TeamDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val playersList : List<Player>? = viewModel.getAllPlayers(args.myArg) // getAllPlayers can be just a function inside getAllTeams which just returns the list of players for that team
+        val playersList : List<Player>? = viewModel.getAllPlayers(args.myArg)
         playersList.let { showPlayers(it) }
     }
 

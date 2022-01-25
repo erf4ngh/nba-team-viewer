@@ -4,7 +4,6 @@ import android.util.Log
 import com.example.nbatv.Team
 import com.example.nbatv.TeamRepository
 import com.squareup.moshi.JsonAdapter
-import com.example.nbatv.internal.toTeam
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -30,6 +29,8 @@ class HttpUrlConnectionTeamRepository : TeamRepository {
         val entityListType = Types.newParameterizedType(List::class.java, MoshiTeamEntity::class.java)
         val jsonAdapter: JsonAdapter<List<MoshiTeamEntity>> = moshi.adapter(entityListType)
 
-        return jsonAdapter.fromJson(teamsJson!!)?.map { it.toTeam() }
+        return jsonAdapter.fromJson(teamsJson!!)?.map {
+            it.toTeam()
+        }
     }
 }

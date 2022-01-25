@@ -25,9 +25,9 @@ class PlayerAdapter(val players: List<Player>?) : RecyclerView.Adapter<PlayerAda
 
     class PlayerViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer{
         fun bind(player: Player){
-            containerView.textViewFirstName.text = player!!.firstName.toString()
-            containerView.textViewLastName.text = player.lastName.toString()
-            containerView.textViewPosition.text = player.position.toString()
+            containerView.textViewFirstName.text = player.firstName
+            containerView.textViewLastName.text = player.lastName
+            containerView.textViewPosition.text = player.position
             containerView.textViewNumber.text = player.number.toString()
         }
     }

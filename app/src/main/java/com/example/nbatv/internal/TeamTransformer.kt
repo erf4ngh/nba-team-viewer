@@ -1,6 +1,7 @@
 package com.example.nbatv.internal
 
 import com.example.nbatv.Team
+import com.example.nbatv.internal.toPlayer
 
 
 fun MoshiTeamEntity.toTeam() : Team {
@@ -9,6 +10,8 @@ fun MoshiTeamEntity.toTeam() : Team {
         teamName = this.fullName,
         wins = this.wins,
         losses = this.losses,
-        players = this.players,
+        players = this.players.map{
+            it.toPlayer()
+        },
     )
 }

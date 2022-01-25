@@ -8,5 +8,5 @@ data class MoshiTeamEntity(
     @Json(name = "full_name") val fullName: String?,
     @Json(name = "wins") val wins: Int?,
     @Json(name = "losses") val losses: Int?,
-    @Json(name = "players") val players: List<Player>,
+    @Json(name = "players") val players: List<MoshiPlayerEntity>,
 )

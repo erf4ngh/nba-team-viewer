@@ -2,9 +2,12 @@ package com.example.nbatv.ui.teams
 
 import com.example.nbatv.Team
 import com.example.nbatv.TeamRepository
+import com.example.nbatv.di.nbaTeamModule
 import org.junit.Assert.*
-
+import org.junit.Before
 import org.junit.Test
+import org.koin.androidx.compose.viewModel
+import org.mockito.kotlin.mock
 
 class TeamListViewModelTest {
 
@@ -18,7 +21,19 @@ class TeamListViewModelTest {
             return teamsTest
         }
     }
-    private val viewModel : TeamListViewModel = TeamListViewModel(mockRepository)
+    private var viewModel : TeamListViewModel = TeamListViewModel(mockRepository)
+
+//    @Before
+//    override fun setup() {
+//        super.setup()
+//        viewModel = mock {
+//
+//        }
+//        loadModulesForTest(nbaModule)
+//        loadModulesForTest {
+//            viewModel(override = true) { viewModel }
+//        }
+//    }
 
     @Test
     fun getAllTeams() {

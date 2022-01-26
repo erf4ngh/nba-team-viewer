@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nbatv.R
 import com.example.nbatv.Team
 import kotlinx.android.synthetic.main.teams_fragment.*
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
+
 
 class TeamListFragment : Fragment() {
 
@@ -15,8 +19,8 @@ class TeamListFragment : Fragment() {
         fun newInstance() = TeamListFragment()
     }
 
-    private var viewModel: TeamListViewModel = TeamListViewModel()
-    var sortId : Int = 1
+//    private val viewModel: TeamListViewModel by viewModel()
+    private val viewModel: TeamListViewModel = TeamListViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

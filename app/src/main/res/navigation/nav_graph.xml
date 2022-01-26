@@ -21,7 +21,7 @@
         tools:layout="@layout/team_detail_fragment"
         >
         <argument
-            android:name="myArg"
+            android:name="team"
             app:argType="com.example.nbatv.Team"
              />
 </fragment>

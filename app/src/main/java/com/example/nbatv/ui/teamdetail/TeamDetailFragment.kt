@@ -21,6 +21,11 @@ class TeamDetailFragment : Fragment() {
     private var viewModel: TeamDetailViewModel = TeamDetailViewModel()
     val args: TeamDetailFragmentArgs by navArgs()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.team = args.team
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,7 +35,7 @@ class TeamDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val playersList : List<Player>? = viewModel.getAllPlayers(args.myArg)
+        val playersList : List<Player>? = viewModel.getAllPlayers()
         playersList.let { showPlayers(it) }
     }
 

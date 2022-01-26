@@ -21,7 +21,7 @@ class HttpUrlConnectionTeamRepository : TeamRepository {
         try {
             val response: BufferedInputStream = BufferedInputStream(urlConnection.getInputStream())
             teamsJson = response.bufferedReader().readLines().joinToString(separator = "")
-            Log.v("HttpUrlRepository", "$teamsJson")
+            //Log.v("HttpUrlRepository", "$teamsJson")
         } finally {
             urlConnection.disconnect()
         }

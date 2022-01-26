@@ -20,11 +20,15 @@ class TeamListFragment : Fragment() {
     }
 
     private val viewModel: TeamListViewModel by viewModel()
-    //private val viewModel: TeamListViewModel = TeamListViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.getAllTeams {showTeams(it)}
     }
 
     override fun onCreateView(
@@ -36,8 +40,6 @@ class TeamListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val teamsList : List<Team>? = viewModel.getAllTeams()
-        teamsList.let { showTeams(it) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -49,15 +51,15 @@ class TeamListFragment : Fragment() {
         val id = item.itemId
         return when(id) {
             R.id.sortByName -> {
-                showTeams(viewModel.getTeamsSortedByName())
+                viewModel.getTeamsSortedByName {showTeams(it)}
                 true
             }
             R.id.sortByWins -> {
-                showTeams(viewModel.getTeamsSortedByWins())
+                viewModel.getTeamsSortedByWins {showTeams(it)}
                 true
             }
             R.id.sortByLosses -> {
-                showTeams(viewModel.getTeamsSortedByLosses())
+                viewModel.getTeamsSortedByLosses {showTeams(it)}
                 true
             }
             else -> super.onOptionsItemSelected(item)

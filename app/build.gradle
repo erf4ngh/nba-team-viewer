@@ -66,14 +66,6 @@ dependencies {
     def koin_version= "3.1.5"
     // Koin main features for Android
     implementation "io.insert-koin:koin-android:$koin_version"
-    // Java Compatibility
-    implementation "io.insert-koin:koin-android-compat:$koin_version"
-    // Jetpack WorkManager
-    implementation "io.insert-koin:koin-androidx-workmanager:$koin_version"
-    // Navigation Graph
-    implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
-    // Jetpack Compose
-    implementation "io.insert-koin:koin-androidx-compose:$koin_version"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

@@ -8,6 +8,7 @@ import com.example.nbatv.Player
 import com.example.nbatv.R
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.layout_player.view.*
+import kotlinx.android.synthetic.main.team_detail_fragment.view.*
 
 class PlayerAdapter(val players: List<Player>?) : RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
 

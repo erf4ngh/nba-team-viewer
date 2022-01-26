@@ -6,7 +6,7 @@ import com.example.nbatv.TeamRepository
 import com.example.nbatv.internal.HttpUrlConnectionTeamRepository
 import kotlin.concurrent.thread
 
-class TeamListViewModel(private val teamRepository: TeamRepository = HttpUrlConnectionTeamRepository()) : ViewModel() {
+class TeamListViewModel(private val teamRepository: TeamRepository) : ViewModel() {
     private var teams: List<Team>? = null
     fun getAllTeams(): List<Team>? {
         if(teams != null){

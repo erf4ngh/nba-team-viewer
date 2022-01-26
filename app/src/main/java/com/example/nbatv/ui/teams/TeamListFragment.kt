@@ -19,8 +19,8 @@ class TeamListFragment : Fragment() {
         fun newInstance() = TeamListFragment()
     }
 
-//    private val viewModel: TeamListViewModel by viewModel()
-    private val viewModel: TeamListViewModel = TeamListViewModel()
+    private val viewModel: TeamListViewModel by viewModel()
+    //private val viewModel: TeamListViewModel = TeamListViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

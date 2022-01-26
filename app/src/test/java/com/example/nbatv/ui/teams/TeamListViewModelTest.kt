@@ -21,19 +21,19 @@ class TeamListViewModelTest {
             return teamsTest
         }
     }
-    private var viewModel : TeamListViewModel = TeamListViewModel(mockRepository)
+    private var teamRepository : TeamRepository = TeamListViewModel(mockRepository)
 
-//    @Before
-//    override fun setup() {
-//        super.setup()
-//        viewModel = mock {
-//
-//        }
-//        loadModulesForTest(nbaModule)
-//        loadModulesForTest {
-//            viewModel(override = true) { viewModel }
-//        }
-//    }
+    @Before
+    override fun setup() {
+        super.setup()
+        teamRepository = mock {
+
+        }
+        loadModulesForTest(nbaModule)
+        loadModulesForTest {
+            viewModel(override = true) { viewModel }
+        }
+    }
 
     @Test
     fun getAllTeams() {

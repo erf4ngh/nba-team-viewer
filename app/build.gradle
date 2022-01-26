@@ -28,8 +28,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
     buildFeatures {
@@ -55,9 +56,6 @@ dependencies {
     implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     implementation 'com.squareup.moshi:moshi:1.13.0'
-
-    // refreshlayout
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     //mockito
     testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"

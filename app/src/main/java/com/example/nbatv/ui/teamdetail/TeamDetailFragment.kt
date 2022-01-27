@@ -42,5 +42,8 @@ class TeamDetailFragment : Fragment() {
         recyclerViewPlayers.layoutManager = LinearLayoutManager(activity)
         recyclerViewPlayers.adapter = PlayerAdapter(team.players)
         //add in teamInfo (wins/losses/teamName)
+        textViewTeamPageName.text = team.teamName
+        textViewTeamPageWins.text = team.wins.toString()
+        textViewTeamPageLosses.text = team.losses.toString()
     }
 }

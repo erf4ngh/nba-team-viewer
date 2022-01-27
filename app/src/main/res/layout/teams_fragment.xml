@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.teams.TeamListFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
+        android:id="@+id/TeamTitle"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Team Name"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textViewPlayerPosition"
+            android:text="Wins"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/playerNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/playerNumber"
+            android:text="Losses"
+            android:textSize="10sp"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewTeams"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/TeamTitle"
+        android:layout_height="wrap_content"
         tools:listitem="@layout/layout_team" />
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

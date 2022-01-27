@@ -12,6 +12,7 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            app:title="NBA Team Viewer"
             android:id="@+id/toolbar"
             android:minHeight="?attr/actionBarSize" />
 

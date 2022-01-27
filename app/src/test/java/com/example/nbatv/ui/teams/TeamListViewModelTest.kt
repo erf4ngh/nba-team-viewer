@@ -52,12 +52,16 @@ class TeamListViewModelTest {
     fun `verify getting teams sorted by wins`() {
         whenever(teamRepository.getAllTeams()).doReturn(teamsTest)
         val teamsTestSortedByWins : List<Team> = listOf(
-            Team(3, "Atlanta Hawks", 10, 10, emptyList()),
+            Team(3, "Atlanta Hawks", 54, 10, emptyList()),
             Team(2,"Utah Jazz", 34,34, emptyList()),
             Team(1, "Toronto Raptors", 33, 12, emptyList()),
         )
-        subject.getTeamsSortedByWins { assertEquals(teamsTestSortedByWins, it); fail() }
+//        subject.getTeamsSortedByWins { assertEquals(teamsTestSortedByWins, it); fail() }
+//        uiContext.join()
+        var actual: List<Team>? = null
+        subject.getTeamsSortedByWins { actual = it }
         uiContext.join()
+        assertEquals(teamsTestSortedByWins, actual!!)
     }
 
     @Test

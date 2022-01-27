@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nbatv.*
-import com.example.nbatv.ui.teams.TeamListViewModel
 import kotlinx.android.synthetic.main.team_detail_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -23,7 +22,8 @@ class TeamDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getTeam(args.teamId)
+//        Log.v("hi", args.teamId.toString())
+        viewModel.teamId = args.teamId
     }
 
     override fun onCreateView(
@@ -35,12 +35,12 @@ class TeamDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val playersList : List<Player>? = viewModel.getAllPlayers()
-        playersList.let { showPlayers(it) }
+        viewModel.getTeam {showTeam(it)}
     }
 
-    private fun showPlayers(player : List<Player>?){
+    private fun showTeam(team : Team){
         recyclerViewPlayers.layoutManager = LinearLayoutManager(activity)
-        recyclerViewPlayers.adapter = PlayerAdapter(player)
+        recyclerViewPlayers.adapter = PlayerAdapter(team.players)
+        //add in teamInfo (wins/losses/teamName)
     }
 }

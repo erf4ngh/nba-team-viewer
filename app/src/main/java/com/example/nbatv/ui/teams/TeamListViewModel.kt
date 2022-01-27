@@ -5,7 +5,6 @@ import android.os.Looper
 import androidx.lifecycle.ViewModel
 import com.example.nbatv.Team
 import com.example.nbatv.TeamRepository
-import com.example.nbatv.internal.HttpUrlConnectionTeamRepository
 import kotlin.concurrent.thread
 
 class TeamListViewModel(private val teamRepository: TeamRepository) : ViewModel() {

@@ -3,12 +3,13 @@ package com.example.nbatv.internal
 import com.example.nbatv.Team
 import com.example.nbatv.TeamRepository
 
-class MemoryCachingTeamRepository(private val delegate: TeamRepository) : TeamRepository by delegate {
+class MemoryCachingTeamRepository(private val delegate: TeamRepository) : TeamRepository {
+    var teams : List<Team>? = null
     override fun getAllTeams(): List<Team>? {
-        var teams : List<Team>? = delegate.getAllTeams()
         if(teams != null){
             return teams
         }
-        return delegate.getAllTeams()
+        teams = delegate.getAllTeams()
+        return teams
     }
 }

@@ -7,6 +7,6 @@ import org.junit.Test
 class HttpUrlConnectionTeamRepositoryTest {
 
     @Test
-    fun `verify get all teams`() {
+    fun getAllTeams() {
     }
 }

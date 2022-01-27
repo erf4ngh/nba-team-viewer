@@ -6,13 +6,10 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
-class MoshiTeamJsonAdapter : TeamJsonAdapter{
+class MoshiTeamJsonAdapter(private val builder: ParseBuilder) : TeamJsonAdapter{
     override fun jsonToTeams(json : String): List<Team>? {
-
-        //inject moshi instead
-        val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
         val entityListType = Types.newParameterizedType(List::class.java, MoshiTeamEntity::class.java)
-        val jsonAdapter: JsonAdapter<List<MoshiTeamEntity>> = moshi.adapter(entityListType)
+        val jsonAdapter: JsonAdapter<List<MoshiTeamEntity>> = builder.buildMoshi().adapter(entityListType)
 
         //fix null stuff
         return jsonAdapter.fromJson(json!!)?.map {

@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nbatv.*
+import com.example.nbatv.ui.teams.TeamListViewModel
 import kotlinx.android.synthetic.main.team_detail_fragment.*
-
-//import com.example.nbatv.ui.teams.TeamAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TeamDetailFragment : Fragment() {
 
@@ -18,12 +18,12 @@ class TeamDetailFragment : Fragment() {
         fun newInstance() = TeamDetailFragment()
     }
 
-    private var viewModel: TeamDetailViewModel = TeamDetailViewModel()
+    private val viewModel: TeamDetailViewModel by viewModel()
     val args: TeamDetailFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.team = args.team
+        viewModel.getTeam(args.teamId)
     }
 
     override fun onCreateView(

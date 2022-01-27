@@ -27,13 +27,13 @@ class TeamListViewModelTest {
     }
 
     @Test
-    fun getAllTeams() {
+    fun `verify getting all teams`() {
         whenever(teamRepository.getAllTeams()).doReturn(teamsTest)
         assertEquals(teamsTest, subject.getAllTeams())
     }
 
     @Test
-    fun getTeamsSortedByName() {
+    fun `verify getting teams sorted by name`() {
         whenever(teamRepository.getAllTeams()).doReturn(teamsTest)
         val teamsTestSortedByName : List<Team> = listOf(
             Team(3, "Atlanta Hawks", 54, 10, emptyList()),
@@ -44,7 +44,7 @@ class TeamListViewModelTest {
     }
 
     @Test
-    fun getTeamsSortedByWins() {
+    fun `verify getting teams sorted by wins`() {
         whenever(teamRepository.getAllTeams()).doReturn(teamsTest)
         val teamsTestSortedByWins : List<Team> = listOf(
             Team(3, "Atlanta Hawks", 54, 10, emptyList()),
@@ -55,7 +55,7 @@ class TeamListViewModelTest {
     }
 
     @Test
-    fun getTeamsSortedByLosses() {
+    fun `verify getting teams sorted by losses`() {
         whenever(teamRepository.getAllTeams()).doReturn(teamsTest)
         val teamsTestSortedByLosses : List<Team> = listOf(
             Team(2,"Utah Jazz", 34,34, emptyList()),

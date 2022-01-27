@@ -71,7 +71,7 @@ class TeamListFragment : Fragment() {
         recyclerViewTeams.adapter = TeamListAdapter(team, ::navigateToTeamDetail)
     }
     private fun navigateToTeamDetail(team : Team){
-        val action = TeamListFragmentDirections.actionTeamsFragmentToTeamDetailFragment(team)
+        val action = TeamListFragmentDirections.actionTeamsFragmentToTeamDetailFragment(team.id)
         findNavController().navigate(action)
     }
 }

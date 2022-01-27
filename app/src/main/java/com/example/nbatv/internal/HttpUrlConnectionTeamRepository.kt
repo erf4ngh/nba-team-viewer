@@ -20,4 +20,5 @@ class HttpUrlConnectionTeamRepository(private val teamJsonAdapter: TeamJsonAdapt
         }
         return teamJsonAdapter.jsonToTeams(teamsJson!!)
     }
+    override fun getTeam(id: Int) : Team? = getAllTeams()?.find { it.id == id}
 }

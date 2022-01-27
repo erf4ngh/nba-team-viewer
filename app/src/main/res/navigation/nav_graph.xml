@@ -21,8 +21,8 @@
         tools:layout="@layout/team_detail_fragment"
         >
         <argument
-            android:name="team"
-            app:argType="com.example.nbatv.Team"
+            android:name="teamId"
+            app:argType="integer"
              />
 </fragment>
 

@@ -1,19 +1,18 @@
 package com.example.nbatv.ui.teams
 
-import android.os.Handler
-import android.os.Looper
 import androidx.lifecycle.ViewModel
 import com.example.nbatv.Team
 import com.example.nbatv.TeamRepository
+import com.example.nbatv.execution.ExecutionContext
 import kotlin.concurrent.thread
 
-class TeamListViewModel(private val teamRepository: TeamRepository) : ViewModel() {
-    private val mainHandler = Handler(Looper.getMainLooper())
+class TeamListViewModel(private val teamRepository: TeamRepository, private val ui : ExecutionContext, private val io : ExecutionContext) : ViewModel() {
+
     private var teams: List<Team>? = null
     fun getAllTeams(onTeams: (List<Team>?) -> Unit) {
-        thread {
+        io.execute {
             teams = teamRepository.getAllTeams()
-            mainHandler.post { onTeams(teams) }
+            ui.execute { onTeams(teams) }
         }
     }
 

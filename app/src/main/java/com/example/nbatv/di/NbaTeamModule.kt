@@ -12,7 +12,7 @@ import org.koin.dsl.module
 val nbaTeamModule = module {
     val moshi : Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     single<TeamJsonAdapter> { MoshiTeamJsonAdapter(moshi) }
-    single<TeamRepository> { HttpUrlConnectionTeamRepository(get()) }
+    single<TeamRepository> { MemoryCachingTeamRepository(HttpUrlConnectionTeamRepository(get())) }
     viewModel { TeamListViewModel(get()) }
     viewModel { TeamDetailViewModel(get()) }
 }

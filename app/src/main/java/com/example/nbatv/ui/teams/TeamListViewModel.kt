@@ -12,9 +12,6 @@ class TeamListViewModel(private val teamRepository: TeamRepository) : ViewModel(
     private val mainHandler = Handler(Looper.getMainLooper())
     private var teams: List<Team>? = null
     fun getAllTeams(onTeams: (List<Team>?) -> Unit) {
-        if (teams != null) {
-            onTeams(teams)
-        }
         thread {
             teams = teamRepository.getAllTeams()
             mainHandler.post { onTeams(teams) }

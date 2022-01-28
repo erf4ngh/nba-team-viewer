@@ -19,7 +19,7 @@ val nbaTeamModule = module {
     single<ExecutionContext> (named("ui")) { UiExecutionContext() }
     single<ExecutionContext> (named("io")) { SingleThreadExecutionContext() }
     single<TeamJsonAdapter> { MoshiTeamJsonAdapter(moshi) }
-    single<TeamRepository> { MemoryCachingTeamRepository(HttpUrlConnectionTeamRepository(get(), url)) }
+    single<TeamRepository> { MemoryCachingTeamRepository(OkHttpTeamRepository(get(), url)) }
     viewModel { TeamListViewModel(get(),get(named("ui")),get(named("io"))) }
     viewModel { TeamDetailViewModel(get()) }
 }

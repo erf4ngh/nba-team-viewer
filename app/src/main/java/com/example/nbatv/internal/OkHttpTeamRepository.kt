@@ -12,23 +12,7 @@ import java.io.IOException
 
 //okHTTP + mock webserver
 
-class HttpUrlConnectionTeamRepository(private val teamJsonAdapter: TeamJsonAdapter, val url : String) : TeamRepository {
-//    override fun getAllTeams(): List<Team>? {
-//        var teamsJson: String? = null
-//        val url =
-//            URL(url)
-//        val urlConnection: HttpURLConnection = url.openConnection() as HttpURLConnection
-//        try {
-//            val response: BufferedInputStream = BufferedInputStream(urlConnection.getInputStream())
-//            teamsJson = response.bufferedReader().readLines().joinToString(separator = "")
-//        } finally {
-//            urlConnection.disconnect()
-//        }
-//        return teamJsonAdapter.jsonToTeams(teamsJson!!)
-//    }
-
-
-
+class OkHttpTeamRepository(private val teamJsonAdapter: TeamJsonAdapter, val url : String) : TeamRepository {
     override fun getAllTeams(): List<Team>? {
         var teamsJson: String? = null
         val client = OkHttpClient()

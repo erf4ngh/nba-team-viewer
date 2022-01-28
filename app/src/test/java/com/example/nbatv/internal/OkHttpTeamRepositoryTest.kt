@@ -4,7 +4,7 @@ import org.junit.Assert.*
 
 import org.junit.Test
 
-class HttpUrlConnectionTeamRepositoryTest {
+class OkHttpTeamRepositoryTest {
 
     @Test
     fun getAllTeams() {

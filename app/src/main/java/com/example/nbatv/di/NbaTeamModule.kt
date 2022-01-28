@@ -15,10 +15,11 @@ import org.koin.dsl.module
 
 val nbaTeamModule = module {
     val moshi : Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+    val url = "https://raw.githubusercontent.com/scoremedia/nba-team-viewer/master/input.json"
     single<ExecutionContext> (named("ui")) { UiExecutionContext() }
     single<ExecutionContext> (named("io")) { SingleThreadExecutionContext() }
     single<TeamJsonAdapter> { MoshiTeamJsonAdapter(moshi) }
-    single<TeamRepository> { MemoryCachingTeamRepository(HttpUrlConnectionTeamRepository(get())) }
+    single<TeamRepository> { MemoryCachingTeamRepository(HttpUrlConnectionTeamRepository(get(), url)) }
     viewModel { TeamListViewModel(get(),get(named("ui")),get(named("io"))) }
     viewModel { TeamDetailViewModel(get()) }
 }

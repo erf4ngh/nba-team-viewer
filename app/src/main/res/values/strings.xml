@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NBAtv</string>
+    <string name="app_name">NBA Team Viewer</string>
     <string name="sortByName">Name</string>
     <string name="sortByWins">Wins</string>
     <string name="sortByLosses">Losses</string>

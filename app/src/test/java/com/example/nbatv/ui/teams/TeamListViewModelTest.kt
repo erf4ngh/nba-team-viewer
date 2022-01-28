@@ -45,7 +45,12 @@ class TeamListViewModelTest {
             Team(1, "Toronto Raptors", 33, 12, emptyList()),
             Team(2,"Utah Jazz", 34,34, emptyList()),
         )
-        subject.getTeamsSortedByName { assertEquals(teamsTestSortedByName, it) }
+        //subject.getTeamsSortedByName { assertEquals(teamsTestSortedByName, it) }
+        var actual: List<Team>? = null
+        subject.getTeamsSortedByName { actual = it }
+//        uiContext.join()
+        Thread.sleep(1000)
+        assertEquals(teamsTestSortedByName, actual!!)
     }
 
     @Test
@@ -60,7 +65,8 @@ class TeamListViewModelTest {
 //        uiContext.join()
         var actual: List<Team>? = null
         subject.getTeamsSortedByWins { actual = it }
-        uiContext.join()
+//        uiContext.join()
+        Thread.sleep(1000)
         assertEquals(teamsTestSortedByWins, actual!!)
     }
 
@@ -72,11 +78,11 @@ class TeamListViewModelTest {
             Team(1, "Toronto Raptors", 33, 12, emptyList()),
             Team(3, "Atlanta Hawks", 54, 10, emptyList()),
         )
-        subject.getTeamsSortedByLosses { assertEquals(teamsTestSortedByLosses, it)}
-    }
-
-    @After
-    fun teardown(){
-        uiContext.join()
+        //subject.getTeamsSortedByLosses { assertEquals(teamsTestSortedByLosses, it)}
+        var actual: List<Team>? = null
+        subject.getTeamsSortedByLosses { actual = it }
+//        uiContext.join()
+        Thread.sleep(1000)
+        assertEquals(teamsTestSortedByLosses, actual!!)
     }
 }

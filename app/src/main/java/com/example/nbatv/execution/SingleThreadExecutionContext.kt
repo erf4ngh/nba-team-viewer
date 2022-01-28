@@ -10,7 +10,7 @@ class SingleThreadExecutionContext : ExecutionContext {
         executorService.submit(block)
     }
 
-    fun join() {
-        executorService.awaitTermination(5000, TimeUnit.MILLISECONDS)
-    }
+//    fun join() {
+//        executorService.awaitTermination(5000, TimeUnit.MILLISECONDS)
+//    }
 }

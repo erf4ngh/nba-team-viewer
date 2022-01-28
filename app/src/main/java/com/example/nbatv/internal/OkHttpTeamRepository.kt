@@ -12,10 +12,9 @@ import java.io.IOException
 
 //okHTTP + mock webserver
 
-class OkHttpTeamRepository(private val teamJsonAdapter: TeamJsonAdapter, val url : String) : TeamRepository {
+class OkHttpTeamRepository(private val teamJsonAdapter: TeamJsonAdapter, val url : String, val client: OkHttpClient) : TeamRepository {
     override fun getAllTeams(): List<Team>? {
         var teamsJson: String? = null
-        val client = OkHttpClient()
         val request = Request.Builder()
             .url(url)
             .build()

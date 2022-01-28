@@ -3,17 +3,4 @@
     <string name="sortByName">Name</string>
     <string name="sortByWins">Wins</string>
     <string name="sortByLosses">Losses</string>
-    <string-array name="team_list">
-        <item>Atlanta Hawks</item>
-        <item>Boston Celtics</item>
-        <item>Toronto Raptors</item>
-        <item>Washington Wizards</item>
-    </string-array>
-
-    <string-array name="match_history">
-        <item>25-25</item>
-        <item>22-28</item>
-        <item>19-31</item>
-        <item>12-38</item>
-    </string-array>
 </resources>

@@ -8,6 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/teamPage"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/black"

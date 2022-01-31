@@ -3,17 +3,28 @@ package com.example.nbatv.ui.teams
 import androidx.lifecycle.ViewModel
 import com.example.nbatv.Team
 import com.example.nbatv.TeamRepository
-import com.example.nbatv.execution.ExecutionContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import android.os.Handler
+import android.os.Looper
 import kotlin.concurrent.thread
 
-class TeamListViewModel(private val teamRepository: TeamRepository, private val ui : ExecutionContext, private val io : ExecutionContext) : ViewModel() {
+class TeamListViewModel(private val teamRepository: TeamRepository) : ViewModel() {
 
+    private val mainHandler = Handler(Looper.getMainLooper())
     private var teams: List<Team>? = null
+
     fun getAllTeams(onTeams: (List<Team>?) -> Unit) {
-        io.execute {
+        //coroutine
+        thread {
             teams = teamRepository.getAllTeams()
-            ui.execute { onTeams(teams) }
+            mainHandler.post { onTeams(teams) }
         }
+//        GlobalScope.launch(Dispatchers.IO) {
+//            val teams = teamRepository.getAllTeams()
+//            onTeams(teams)
+//        }
     }
 
     fun getTeamsSortedByName(onTeams: (List<Team>?) -> Unit) {

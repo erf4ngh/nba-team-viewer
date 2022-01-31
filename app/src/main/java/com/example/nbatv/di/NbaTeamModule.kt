@@ -18,10 +18,8 @@ val nbaTeamModule = module {
     val moshi : Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
     val url = "https://raw.githubusercontent.com/scoremedia/nba-team-viewer/master/input.json"
     val client = OkHttpClient()
-    single<ExecutionContext> (named("ui")) { UiExecutionContext() }
-    single<ExecutionContext> (named("io")) { SingleThreadExecutionContext() }
     single<TeamJsonAdapter> { MoshiTeamJsonAdapter(moshi) }
     single<TeamRepository> { MemoryCachingTeamRepository(OkHttpTeamRepository(get(), url, client)) }
-    viewModel { TeamListViewModel(get(),get(named("ui")),get(named("io"))) }
+    viewModel { TeamListViewModel(get()) }
     viewModel { TeamDetailViewModel(get()) }
 }

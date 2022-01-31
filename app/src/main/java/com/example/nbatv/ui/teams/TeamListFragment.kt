@@ -37,10 +37,6 @@ class TeamListFragment : Fragment() {
         return inflater.inflate(R.layout.teams_fragment, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.main_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)

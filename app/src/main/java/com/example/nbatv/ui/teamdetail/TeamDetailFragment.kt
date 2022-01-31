@@ -22,7 +22,6 @@ class TeamDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        Log.v("hi", args.teamId.toString())
         viewModel.teamId = args.teamId
     }
 
@@ -41,7 +40,6 @@ class TeamDetailFragment : Fragment() {
     private fun showTeam(team : Team){
         recyclerViewPlayers.layoutManager = LinearLayoutManager(activity)
         recyclerViewPlayers.adapter = PlayerAdapter(team.players)
-        //add in teamInfo (wins/losses/teamName)
         textViewTeamPageName.text = team.teamName
         textViewTeamPageWins.text = team.wins.toString()
         textViewTeamPageLosses.text = team.losses.toString()

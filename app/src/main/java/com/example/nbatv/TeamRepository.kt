@@ -1,6 +1,8 @@
 package com.example.nbatv
 
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.toList
 
 //interface TeamRepository {
 //    fun getAllTeams(): List<Team>?
@@ -8,6 +10,6 @@ import kotlinx.coroutines.flow.Flow
 //}
 
 interface TeamRepository {
-    suspend fun getAllTeams() : Flow<Team> //might need suspend not sure yet
-    //fun getTeam(id : Int) : Flow<Team> = getAllTeams().find { it.id == id }
+    suspend fun getAllTeams() : Flow<Team>
+    suspend fun getTeam(id: Int) : Team = getAllTeams().toList().find { it.id == id }!!
 }

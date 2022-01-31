@@ -5,6 +5,7 @@ import com.example.nbatv.Team
 import com.example.nbatv.TeamRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -15,7 +16,7 @@ class TeamListViewModel(private val teamRepository: TeamRepository) : ViewModel(
     fun getAllTeams(onTeams: (List<Team>?) -> Unit) {
 
         GlobalScope.launch {
-            teams = teamRepository.getAllTeams()
+            teams = teamRepository.getAllTeams().toList()
             withContext(Dispatchers.Main) { onTeams(teams) }
         }
     }

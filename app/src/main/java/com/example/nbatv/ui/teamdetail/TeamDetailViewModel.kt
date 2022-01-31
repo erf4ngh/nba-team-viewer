@@ -13,7 +13,8 @@ class TeamDetailViewModel(private val teamRepository: TeamRepository) : ViewMode
 
     fun getTeam(onTeam: (team: Team) -> Unit) {
         GlobalScope.launch(Dispatchers.Main) {
-            val team = teamRepository.getTeam(teamId!!)
+            //val team = teamRepository.getTeam(teamId!!)
+            val team = Team(1, "Team", 35,34, emptyList())
             onTeam(team!!)
         }
     }

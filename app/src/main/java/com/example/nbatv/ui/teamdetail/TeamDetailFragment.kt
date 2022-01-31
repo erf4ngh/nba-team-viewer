@@ -34,10 +34,10 @@ class TeamDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getTeam {showTeam(it)}
+        viewModel.getTeam { showTeam(it) }
     }
 
-    private fun showTeam(team : Team){
+    private fun showTeam(team: Team) {
         recyclerViewPlayers.layoutManager = LinearLayoutManager(activity)
         recyclerViewPlayers.adapter = PlayerAdapter(team.players)
         textViewTeamPageName.text = team.teamName

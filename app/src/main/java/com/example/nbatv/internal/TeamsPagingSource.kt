@@ -18,33 +18,15 @@ class TeamsPagingSource(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Team> {
         val pageIndex = params.key ?: STARTING_PAGE_INDEX
         return try {
-            val response = service.getTeams()
-            val teams = response
-            val nextKey =
-                if (teams.isEmpty()) {
-                    null
-                } else {
-                    pageIndex + (params.loadSize / NETWORK_PAGE_SIZE)
-                }
+            val response = service.getTeams(pageIndex, params.loadSize)
             LoadResult.Page(
-                data = teams,
-                prevKey = if (pageIndex == STARTING_PAGE_INDEX) null else pageIndex,
-                nextKey = nextKey
+                response, prevKey = if(pageIndex == STARTING_PAGE_INDEX) null else pageIndex - 1,
+                nextKey = if (response.isEmpty()) null else pageIndex + 1
             )
         } catch (exception: IOException) {
             return LoadResult.Error(exception)
         } catch (exception: HttpException) {
             return LoadResult.Error(exception)
-        }
-    }
-
-    override fun getRefreshKey(state: PagingState<Int, Team>): Int? {
-        // We need to get the previous key (or next key if previous is null) of the page
-        // that was closest to the most recently accessed index.
-        // Anchor position is the most recently accessed index.
-        return state.anchorPosition?.let { anchorPosition ->
-            state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
-                ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
         }
     }
 }

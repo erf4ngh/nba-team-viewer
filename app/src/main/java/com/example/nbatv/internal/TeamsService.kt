@@ -5,13 +5,17 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface TeamsService {
-    @GET("scoremedia/nba-team-viewer/master/input.json")
-    suspend fun getTeams(): Team
+    @GET("teams")
+    suspend fun getTeams(
+        @Query("_page") page: Int,
+        @Query("_limit") limit: Int
+    ): List<Team>
 
     companion object {
-        private const val BASE_URL = "https://raw.githubusercontent.com/"
+        private const val BASE_URL = "https://my-json-server.typicode.com/erf4ngh/nba-team-viewer/"
 
         fun create(): TeamsService {
             val client = OkHttpClient.Builder()

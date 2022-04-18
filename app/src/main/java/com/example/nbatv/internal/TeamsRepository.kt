@@ -30,6 +30,6 @@ class TeamsRepository(private val service: TeamsService) {
     }
     companion object {
         const val NETWORK_PAGE_SIZE = 5
-        //fun getInstance() = TeamsRepository()
+        fun getInstance() = TeamsRepository()
     }
 }

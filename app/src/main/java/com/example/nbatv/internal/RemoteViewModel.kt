@@ -12,9 +12,9 @@ import kotlinx.coroutines.flow.map
 class RemoteViewModel(
     val repository: TeamsRepository = TeamsRepository.getInstance()
     ) : ViewModel() {
-        fun fetchTeams(): Flow<PagingData<String>> {
+        fun fetchTeams(): Flow<PagingData<Team>> {
             return repository.letTeamsFlow()
-                .map { it.map { it.teamName!!} }
+                .map { it.map { it } }
                 .cachedIn(viewModelScope)
         }
     }

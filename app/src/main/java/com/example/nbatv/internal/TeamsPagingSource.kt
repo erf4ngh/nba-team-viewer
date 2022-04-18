@@ -11,9 +11,7 @@ import java.io.IOException
 private const val STARTING_PAGE_INDEX = 1
 
 
-class TeamsPagingSource(
-    private val service: TeamsService //teamsService
-) : PagingSource<Int, Team>() {
+class TeamsPagingSource(private val service: TeamsService) : PagingSource<Int, Team>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Team> {
         val pageIndex = params.key ?: STARTING_PAGE_INDEX

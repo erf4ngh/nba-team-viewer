@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class RemoteViewModel(
-    val repository: TeamsRepository = TeamsRepository.getInstance()
+    val repository: TeamsRepository = TeamsRepository()
     ) : ViewModel() {
         fun fetchTeams(): Flow<PagingData<Team>> {
             return repository.letTeamsFlow()

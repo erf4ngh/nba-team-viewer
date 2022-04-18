@@ -19,6 +19,11 @@ class TeamsRepository(private val service: TeamsService) {
 //    companion object {
 //        const val NETWORK_PAGE_SIZE = 5
 //    }
+    companion object {
+        const val NETWORK_PAGE_SIZE = 5
+        fun getInstance() = TeamsRepository()
+    }
+
     fun letTeamsFlow(pagingConfig: PagingConfig = getDefaultPageConfig()) : Flow<PagingData<Team>> {
         return Pager(
             config = pagingConfig,
@@ -27,9 +32,5 @@ class TeamsRepository(private val service: TeamsService) {
     }
     fun getDefaultPageConfig(): PagingConfig {
         return PagingConfig(pageSize = 5, enablePlaceholders = false)
-    }
-    companion object {
-        const val NETWORK_PAGE_SIZE = 5
-        fun getInstance() = TeamsRepository()
     }
 }

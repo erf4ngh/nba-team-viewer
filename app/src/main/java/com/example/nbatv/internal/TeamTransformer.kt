@@ -1,7 +1,7 @@
 package com.example.nbatv.internal
 
-import com.example.nbatv.Team
-import com.example.nbatv.internal.toPlayer
+import com.example.nbatv.ui.models.Team
+import com.example.nbatv.data.models.MoshiTeamEntity
 
 
 fun MoshiTeamEntity.toTeam() : Team {

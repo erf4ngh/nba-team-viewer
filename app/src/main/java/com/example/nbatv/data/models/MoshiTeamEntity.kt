@@ -1,6 +1,6 @@
-package com.example.nbatv.internal
+package com.example.nbatv.data.models
 
-import com.example.nbatv.Player
+import com.example.nbatv.internal.MoshiPlayerEntity
 import com.squareup.moshi.Json
 
 data class MoshiTeamEntity(
@@ -8,5 +8,4 @@ data class MoshiTeamEntity(
     @Json(name = "full_name") val fullName: String?,
     @Json(name = "wins") val wins: Int?,
     @Json(name = "losses") val losses: Int?,
-    @Json(name = "players") val players: List<MoshiPlayerEntity>,
 )

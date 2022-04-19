@@ -1,6 +1,6 @@
 package com.example.nbatv.internal
 
-import com.example.nbatv.Team
+import com.example.nbatv.ui.models.Team
 import com.example.nbatv.TeamRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow

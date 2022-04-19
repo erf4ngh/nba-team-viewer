@@ -7,8 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.example.nbatv.R
-import com.example.nbatv.Team
-import com.example.nbatv.ui.teams.TeamListAdapter
+import com.example.nbatv.ui.models.Team
 import kotlinx.android.synthetic.main.layout_team.view.*
 
 class RemoteTeamsAdapter :

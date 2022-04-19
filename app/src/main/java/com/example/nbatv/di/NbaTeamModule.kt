@@ -2,8 +2,8 @@ package com.example.nbatv.di
 
 import com.example.nbatv.TeamRepository
 import com.example.nbatv.internal.*
-import com.example.nbatv.ui.teamdetail.TeamDetailViewModel
-import com.example.nbatv.ui.teams.TeamListViewModel
+import com.example.nbatv.old.ui.teamdetail.TeamDetailViewModel
+import com.example.nbatv.old.ui.teams.TeamListViewModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient

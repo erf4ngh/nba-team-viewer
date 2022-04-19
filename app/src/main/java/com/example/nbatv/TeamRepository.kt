@@ -1,7 +1,7 @@
 package com.example.nbatv
 
+import com.example.nbatv.ui.models.Team
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.toList
 
 //interface TeamRepository {

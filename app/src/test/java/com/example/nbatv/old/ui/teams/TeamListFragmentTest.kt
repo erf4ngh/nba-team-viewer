@@ -1,6 +1,4 @@
-package com.example.nbatv.ui.teams
-
-import org.junit.Assert.*
+package com.example.nbatv.old.ui.teams
 
 import org.junit.Test
 

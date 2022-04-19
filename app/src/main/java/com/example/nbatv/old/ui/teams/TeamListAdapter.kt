@@ -1,12 +1,11 @@
-package com.example.nbatv.ui.teams
+package com.example.nbatv.old.ui.teams
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nbatv.R
-import com.example.nbatv.Team
+import com.example.nbatv.ui.models.Team
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.layout_team.view.*
 

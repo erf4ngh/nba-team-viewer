@@ -1,4 +1,4 @@
-package com.example.nbatv.ui.teamdetail
+package com.example.nbatv.old.ui.teamdetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nbatv.*
+import com.example.nbatv.ui.models.Team
 import kotlinx.android.synthetic.main.team_detail_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

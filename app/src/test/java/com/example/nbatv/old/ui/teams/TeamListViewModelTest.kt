@@ -1,10 +1,8 @@
-package com.example.nbatv.ui.teams
+package com.example.nbatv.old.ui.teams
 
-import com.example.nbatv.Team
+import com.example.nbatv.ui.models.Team
 import com.example.nbatv.TeamRepository
 import com.example.nbatv.execution.SingleThreadExecutionContext
-import com.example.nbatv.execution.UiExecutionContext
-import org.junit.After
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test

@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import com.example.nbatv.ui.models.Team
-import com.example.nbatv.repository.TeamsRepository
+import com.example.nbatv.data.repository.TeamsRepository
 import kotlinx.coroutines.flow.Flow
 
 class RemoteViewModel(

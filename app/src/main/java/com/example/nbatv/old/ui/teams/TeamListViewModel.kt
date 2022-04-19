@@ -1,7 +1,7 @@
-package com.example.nbatv.ui.teams
+package com.example.nbatv.old.ui.teams
 
 import androidx.lifecycle.ViewModel
-import com.example.nbatv.Team
+import com.example.nbatv.ui.models.Team
 import com.example.nbatv.TeamRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

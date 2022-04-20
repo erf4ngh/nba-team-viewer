@@ -17,5 +17,6 @@ val nbaTeamModule = module {
     single<TeamJsonAdapter> { MoshiTeamJsonAdapter(moshi) }
     single<TeamRepository> { MemoryCachingTeamRepository(OkHttpTeamRepository(get(), url, client)) }
     viewModel { TeamListViewModel(get()) }
-    viewModel { TeamDetailViewModel(get()) }
+    viewModel { RemoteViewModel(get()) }
+    //viewModel { TeamDetailViewModel(get()) }
 }

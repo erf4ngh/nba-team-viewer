@@ -10,20 +10,20 @@ import com.example.nbatv.R
 import com.example.nbatv.ui.models.Team
 import kotlinx.android.synthetic.main.layout_team.view.*
 
-class RemoteTeamsAdapter :
-    PagingDataAdapter<Team, RecyclerView.ViewHolder>(REPO_COMPARATOR){
+class TeamListAdapter :
+    PagingDataAdapter<Team, TeamListAdapter.TeamsViewHolder>(COMPARATOR){
     companion object {
-        private val REPO_COMPARATOR = object: DiffUtil.ItemCallback<Team>() {
+        private val COMPARATOR = object: DiffUtil.ItemCallback<Team>() {
             override fun areItemsTheSame(oldItem: Team, newItem: Team): Boolean = oldItem == newItem
             override fun areContentsTheSame(oldItem: Team, newItem: Team): Boolean = oldItem == newItem
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TeamsViewHolder, position: Int) {
         (holder as? TeamsViewHolder)?.bind(team = getItem(position)!!)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamsViewHolder {
         return TeamsViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.layout_team, parent, false)
         )

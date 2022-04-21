@@ -1,4 +1,4 @@
-package com.example.nbatv.internal
+package com.example.nbatv.ui
 
 import android.view.LayoutInflater
 import android.view.View

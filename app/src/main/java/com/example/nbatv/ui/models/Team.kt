@@ -1,6 +1,5 @@
 package com.example.nbatv.ui.models
 
-import com.example.nbatv.internal.MoshiPlayerEntity
 import java.io.Serializable
 
 data class Team (

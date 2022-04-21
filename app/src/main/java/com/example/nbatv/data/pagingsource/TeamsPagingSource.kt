@@ -1,4 +1,4 @@
-package com.example.nbatv.data
+package com.example.nbatv.data.pagingsource
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

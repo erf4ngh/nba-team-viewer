@@ -1,4 +1,4 @@
-package com.example.nbatv.internal
+package com.example.nbatv.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,7 +10,7 @@ import com.example.nbatv.data.repository.TeamsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class RemoteViewModel(
+class TeamViewModel(
     val repository: TeamsRepository
     ) : ViewModel() {
         suspend fun getAllTeams(): Flow<PagingData<Team>> {

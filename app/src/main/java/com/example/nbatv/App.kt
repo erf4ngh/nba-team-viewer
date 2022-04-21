@@ -1,4 +1,4 @@
-package com.example.nbatv.ui
+package com.example.nbatv
 
 import android.app.Application
 import com.example.nbatv.di.nbaTeamModule

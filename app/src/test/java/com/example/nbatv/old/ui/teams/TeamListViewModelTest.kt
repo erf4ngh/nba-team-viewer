@@ -1,12 +1,10 @@
 package com.example.nbatv.old.ui.teams
 
 import com.example.nbatv.ui.models.Team
-import com.example.nbatv.TeamRepository
 import com.example.nbatv.execution.SingleThreadExecutionContext
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 

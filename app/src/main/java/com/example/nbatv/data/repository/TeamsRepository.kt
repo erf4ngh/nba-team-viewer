@@ -3,7 +3,7 @@ package com.example.nbatv.data.repository
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.example.nbatv.data.TeamsPagingSource
+import com.example.nbatv.data.pagingsource.TeamsPagingSource
 import com.example.nbatv.ui.models.Team
 import com.example.nbatv.data.api.APIService
 import com.example.nbatv.data.models.TeamListTransformer

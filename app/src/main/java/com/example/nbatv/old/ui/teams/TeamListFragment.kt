@@ -1,6 +1,7 @@
 package com.example.nbatv.old.ui.teams
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -33,11 +34,14 @@ class TeamListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        recyclerViewTeams.layoutManager = LinearLayoutManager(activity)
+        recyclerViewTeams.adapter = adapter
         lifecycleScope.launch {
             viewModel.getAllTeams().distinctUntilChanged().collectLatest {
                 adapter.submitData(it)
             }
         }
+
     }
 
 

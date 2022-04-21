@@ -17,7 +17,7 @@ class TeamsPagingSource(private val service: APIService, private val transformer
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Team> {
         val pageIndex = params.key ?: STARTING_PAGE_INDEX
         return try {
-            val jsonResponse = service.getTeams(pageIndex, params.loadSize)
+            val jsonResponse = service.getTeams(pageIndex, 5)
             val response = transformer.toTeamListResponse(jsonResponse)
             LoadResult.Page(
                 response,

@@ -1,6 +1,8 @@
 package com.example.nbatv.data.api
 
 import com.example.nbatv.data.models.MoshiTeamEntity
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -19,10 +21,13 @@ interface APIService {
         fun create(): APIService {
             val client = OkHttpClient.Builder()
                 .build()
+            val moshi = Moshi.Builder()
+                .add(KotlinJsonAdapterFactory())
+                .build()
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(client)
-                .addConverterFactory(MoshiConverterFactory.create())
+                .addConverterFactory(MoshiConverterFactory.create(moshi))
                 .build()
                 .create(APIService::class.java)
         }

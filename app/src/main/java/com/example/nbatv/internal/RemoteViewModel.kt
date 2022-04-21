@@ -15,8 +15,5 @@ class RemoteViewModel(
     ) : ViewModel() {
         suspend fun getAllTeams(): Flow<PagingData<Team>> {
             return repository.getTeams().cachedIn(viewModelScope)
-//            return repository.getTeams()
-//                .map { it.map { it } }
-//                .cachedIn(viewModelScope)
         }
     }
